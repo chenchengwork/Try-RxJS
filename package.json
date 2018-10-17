@@ -1,0 +1,26 @@
+{
+  "name": "Try-RxJS",
+  "version": "1.0.0",
+  "author": "chencheng <daniel_txy@163.com>",
+  "description": "try rxjs",
+  "main": "src/index",
+  "scripts": {
+    "dev": "node ./scripts/dev.js"
+  },
+  "dependencies": {
+    "rxjs": "^6.3.3"
+  },
+  "devDependencies": {
+    "webpack": "^4.20.2",
+    "webpack-dev-server": "^3.1.9"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/chenchengwork/Try-RxJS.git"
+  },
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/chenchengwork/Try-RxJS/ssues"
+  },
+  "homepage": "https://github.com/chenchengwork/Try-RxJS#readme"
+}
