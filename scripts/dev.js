@@ -10,7 +10,7 @@ const webpack = require('webpack');
 const WebpackDevServer = require('webpack-dev-server');
 const config = require('./config/webpack.config');
 const host = true ? 'localhost' : tool.getLocalIP();
-const port = 8000;        		// 端口号
+const port = 8001;        		// 端口号
 
 // webpack 自动重新加载，采用inline
 Object.keys(config.entry).forEach(key => {

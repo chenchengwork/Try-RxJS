@@ -2,7 +2,7 @@
  * @description webpack 打包配置
  */
 const paths = require('./paths');
-
+const WebpackBar = require('webpackbar');
 /**
  * 编译排除的文件
  * @type {RegExp}
@@ -102,7 +102,13 @@ const baseWebpackConf = {
         // rules: getModuleRules()
     },
 
-    plugins: []
+    plugins: [
+        new WebpackBar({
+            name: '📦  Webpack',
+            minimal: false,
+            profile: true
+        })
+    ]
 };
 
 module.exports = {
