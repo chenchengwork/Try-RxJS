@@ -2,7 +2,7 @@ import { Observable, fromEvent, Subject } from 'rxjs';
 import { throttleTime, scan, multicast, refCount } from 'rxjs/operators';
 
 const observable = Observable.create(function (observer) {
-    console.log('1111111111')
+    console.log('1111111111');
     // observer.next(1, "a");
     // observer.next(2, "b");
     // observer.next(3, "c");
@@ -37,7 +37,7 @@ const subscribeSingleBroadcast = () => {
 
 // subscribeSingleBroadcast();
 
-//
+// 订阅多广播
 const subscribeMutliBroadcast = () => {
     const subject = new Subject();
     const refCounted = observable.pipe(multicast(subject), refCount());
@@ -45,22 +45,22 @@ const subscribeMutliBroadcast = () => {
     const subscription1 = refCounted.subscribe({
         next: (v) => console.log('observerA: ' + v)
     });
-
+    //
     const subscription2 = refCounted.subscribe({
         next: (v) => console.log('observerB: ' + v)
     });
 
-    setTimeout(() => {
-        console.log('observerA unsubscribed');
-        subscription1.unsubscribe();
-    }, 1200);
-
-    // 这里共享的 Observable 执行会停止，
-    // 因为此后 `refCounted` 将不再有订阅者
-    setTimeout(() => {
-        console.log('observerB unsubscribed');
-        subscription2.unsubscribe();
-    }, 2000);
+    // setTimeout(() => {
+    //     console.log('observerA unsubscribed');
+    //     subscription1.unsubscribe();
+    // }, 1200);
+    //
+    // // 这里共享的 Observable 执行会停止，
+    // // 因为此后 `refCounted` 将不再有订阅者
+    // setTimeout(() => {
+    //     console.log('observerB unsubscribed');
+    //     subscription2.unsubscribe();
+    // }, 2000);
 };
 
 subscribeMutliBroadcast();
